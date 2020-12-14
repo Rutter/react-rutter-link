@@ -58,9 +58,7 @@ export type RutterLinkOptionsWithLinkToken = CommonRutterLinkOptions & {
 
 // Either the publicKey or the token field must be configured. The publicKey
 // is deprecated so prefer to initialize Link with a Link Token instead.
-export type RutterLinkOptions =
-  | RutterLinkOptionsWithPublicKey
-  | RutterLinkOptionsWithLinkToken;
+export type RutterLinkOptions = RutterLinkOptionsWithPublicKey;
 
 export type RutterLinkPropTypes = RutterLinkOptions & {
   children: React.ReactNode;

@@ -4,7 +4,8 @@ import useScript from 'react-script-hook';
 import { createRutter, RutterFactory } from './factory';
 import { RutterLinkOptions, RutterLinkOptionsWithPublicKey } from './types';
 
-const RUTTER_LINK_STABLE_URL = 'https://unpkg.com/@rutter/rutter-link-js';
+const RUTTER_LINK_STABLE_URL =
+  'https://unpkg.com/@rutter/rutter-link-js@latest';
 
 const noop = () => {};
 
@@ -19,7 +20,7 @@ const noop = () => {};
  * It's up to you to prevent unnecessary re-creations on re-render.
  */
 export const useRutterLink = (options: RutterLinkOptions) => {
-  // Asynchronously load the plaid/link/stable url into the DOM
+  // Asynchronously load the rutter/link/stable url into the DOM
   const [loading, error] = useScript({
     src: RUTTER_LINK_STABLE_URL,
     checkForExisting: true,
@@ -33,9 +34,20 @@ export const useRutterLink = (options: RutterLinkOptions) => {
     .sort()
     .join(',');
 
+  const [rutterLoaderLoaded, setRutterLoaderLoaded] = useState(false);
+
   useEffect(() => {
     // If the link.js script is still loading, return prematurely
     if (loading) {
+      return;
+    }
+
+    // do the rutter loader side effect
+    (window as any).RutterLoader.loadScript(() => {
+      setRutterLoaderLoaded(true);
+    });
+
+    if (!rutterLoaderLoaded) {
       return;
     }
 
@@ -45,7 +57,7 @@ export const useRutterLink = (options: RutterLinkOptions) => {
       return;
     }
 
-    // if an old plaid instance exists, destroy it before
+    // if an old rutter instance exists, destroy it before
     // creating a new one
     if (rutter != null) {
       rutter.exit({ force: true }, () => rutter.destroy());
@@ -63,7 +75,7 @@ export const useRutterLink = (options: RutterLinkOptions) => {
 
     // destroy the Rutter iframe factory
     return () => next.exit({ force: true }, () => next.destroy());
-  }, [loading, error, options.token, products]);
+  }, [loading, error, options.token, products, rutterLoaderLoaded]);
 
   return {
     error,

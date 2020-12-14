@@ -24,9 +24,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/plaid/react-plaid-link/issues"
+    "url": "https://github.com/rutter/react-rutter-link/issues"
   },
-  "homepage": "https://github.com/plaid/react-plaid-link",
+  "homepage": "https://github.com/rutter/react-rutter-link",
   "directories": {
     "example": "examples"
   },

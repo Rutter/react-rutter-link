@@ -7,7 +7,7 @@ export interface RutterFactory {
 }
 
 interface FactoryInternalState {
-  plaid: Rutter | null;
+  rutter: Rutter | null;
   open: boolean;
   onExitCallback: Function | null;
 }
@@ -27,7 +27,7 @@ const renameKeyInObject = (
  */
 export const createRutter = (options: RutterLinkOptions) => {
   const state: FactoryInternalState = {
-    plaid: null,
+    rutter: null,
     open: false,
     onExitCallback: null,
   };
@@ -43,7 +43,7 @@ export const createRutter = (options: RutterLinkOptions) => {
     'key'
   ) as RutterLinkOptions;
 
-  state.plaid = window.Rutter.create({
+  state.rutter = window.Rutter.create({
     ...config,
     onExit: (...params: any) => {
       state.open = false;
@@ -53,33 +53,33 @@ export const createRutter = (options: RutterLinkOptions) => {
   });
 
   const open = () => {
-    if (!state.plaid) {
+    if (!state.rutter) {
       return;
     }
     state.open = true;
     state.onExitCallback = null;
-    state.plaid.open();
+    state.rutter.open();
   };
 
   const exit = (exitOptions: any, callback: Function) => {
-    if (!state.open || !state.plaid) {
+    if (!state.open || !state.rutter) {
       callback && callback();
       return;
     }
     state.onExitCallback = callback;
-    state.plaid.exit(exitOptions);
+    state.rutter.exit(exitOptions);
     if (exitOptions && exitOptions.force) {
       state.open = false;
     }
   };
 
   const destroy = () => {
-    if (!state.plaid) {
+    if (!state.rutter) {
       return;
     }
 
-    state.plaid.destroy();
-    state.plaid = null;
+    state.rutter.destroy();
+    state.rutter = null;
   };
 
   return {
