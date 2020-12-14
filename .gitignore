@@ -1,0 +1,6 @@
+/dist/
+/lib/
+examplebuild
+/node_modules/
+npm-debug.log
+.github
