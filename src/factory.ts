@@ -26,6 +26,7 @@ const renameKeyInObject = (
  * Wrap link handler creation and instance to clean up iframe via destroy() method
  */
 export const createRutter = (options: RutterLinkOptions) => {
+  console.log('SJKDJKFJKDF');
   const state: FactoryInternalState = {
     rutter: null,
     open: false,
@@ -37,12 +38,11 @@ export const createRutter = (options: RutterLinkOptions) => {
     throw new Error('Rutter not loaded');
   }
 
-  const config = renameKeyInObject(
-    options,
-    'publicKey',
-    'key'
-  ) as RutterLinkOptions;
+  // const config = renameKeyInObject(options, 'publicKey') as RutterLinkOptions;
+  const config = options;
 
+  console.log(options);
+  console.log(config);
   state.rutter = window.Rutter.create({
     ...config,
     onExit: (...params: any) => {

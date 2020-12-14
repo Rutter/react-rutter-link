@@ -36,6 +36,8 @@ export const useRutterLink = (options: RutterLinkOptions) => {
 
   const [rutterLoaderLoaded, setRutterLoaderLoaded] = useState(false);
 
+  console.log(options);
+
   useEffect(() => {
     // If the link.js script is still loading, return prematurely
     if (loading) {

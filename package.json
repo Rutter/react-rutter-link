@@ -35,7 +35,8 @@
     "storybook": "start-storybook -p 9001",
     "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "build-storybook -s public",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w"
   },
   "husky": {
     "hooks": {
