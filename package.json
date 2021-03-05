@@ -1,6 +1,6 @@
 {
   "name": "react-rutter-link",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A React component for Rutter Link",
   "files": [
     "dist",
@@ -36,7 +36,8 @@
     "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "build-storybook -s public",
     "build": "rollup -c",
-    "build:watch": "rollup -c -w"
+    "build:watch": "rollup -c -w",
+    "pub": "yarn build && yarn publish"
   },
   "husky": {
     "hooks": {
