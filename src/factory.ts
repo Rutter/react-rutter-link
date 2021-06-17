@@ -12,15 +12,15 @@ interface FactoryInternalState {
   onExitCallback: Function | null;
 }
 
-const renameKeyInObject = (
-  o: { [index: string]: any },
-  oldKey: string,
-  newKey: string
-): object => {
-  const newObject = {};
-  delete Object.assign(newObject, o, { [newKey]: o[oldKey] })[oldKey];
-  return newObject;
-};
+// const renameKeyInObject = (
+//   o: { [index: string]: any },
+//   oldKey: string,
+//   newKey: string
+// ): object => {
+//   const newObject = {};
+//   delete Object.assign(newObject, o, { [newKey]: o[oldKey] })[oldKey];
+//   return newObject;
+// };
 
 /**
  * Wrap link handler creation and instance to clean up iframe via destroy() method
@@ -49,13 +49,13 @@ export const createRutter = (options: RutterLinkOptions) => {
     },
   });
 
-  const open = () => {
+  const open = (opts?: any) => {
     if (!state.rutter) {
       return;
     }
     state.open = true;
     state.onExitCallback = null;
-    state.rutter.open();
+    state.rutter.open(opts);
   };
 
   const exit = (exitOptions: any, callback: Function) => {
