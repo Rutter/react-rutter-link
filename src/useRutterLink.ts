@@ -43,7 +43,7 @@ export const useRutterLink = (options: RutterLinkOptions) => {
     }
 
     // do the rutter loader side effect
-    (window as any).RutterLoader.loadScript(() => {
+    (window as any).RutterLoader && (window as any).RutterLoader.loadScript(() => {
       setRutterLoaderLoaded(true);
     });
 
