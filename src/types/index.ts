@@ -18,42 +18,7 @@ export type RutterLinkOptionsWithPublicKey = CommonRutterLinkOptions & {
   // The public_key associated with your account; available from
   // the Rutter dashboard (https://dashboard.Rutter.com)
   publicKey: string;
-  // Provide a public_token to initialize Link in update mode.
-  token?: string;
-  // Displayed once a user has successfully linked their account
-  clientName: string;
-  // The Rutter API environment on which to create user accounts.
-  env: string;
-  // The Rutter products you wish to use, an array containing some of connect,
-  // auth, identity, income, transactions, assets, liabilities
-  product: Array<string>;
-  // An array of countries to filter institutions
-  countryCodes?: Array<string>;
-  // A local string to change the default Link display language
-  language?: string;
-  // Your user's associated email address - specify to enable all Auth features.
-  // Note that userLegalName must also be set.
-  userEmailAddress?: string;
-  // Your user's legal first and last name – specify to enable all Auth features.
-  // Note that userEmailAddress must also be set.
-  userLegalName?: string;
-  // Specify a webhook to associate with a user.
-  webhook?: string;
-  linkCustomizationName?: string;
-  accountSubtypes?: { [key: string]: Array<string> };
-  oauthNonce?: string;
-  oauthRedirectUri?: string;
-  oauthStateId?: string;
-  paymentToken?: string;
-};
-
-export type RutterLinkOptionsWithLinkToken = CommonRutterLinkOptions & {
-  // Provide a link_token associated with your account. Create one
-  // using the /link/token/create endpoint.
-  token: string;
-  // receivedRedirectUri is required on the second-initialization of link when using Link
-  // with a redirect_uri to support OAuth flows.
-  receivedRedirectUri?: string;
+  platform?: string;
 };
 
 // Either the publicKey or the token field must be configured. The publicKey
