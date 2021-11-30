@@ -72,7 +72,7 @@ export const useRutterLink = (options: RutterLinkOptions) => {
 
     // destroy the Rutter iframe factory
     return () => next.exit({ force: true }, () => next.destroy());
-  }, [loading, error, products, rutterLoaderLoaded]);
+  }, [loading, error, rutterLoaderLoaded]);
 
   return {
     error,
