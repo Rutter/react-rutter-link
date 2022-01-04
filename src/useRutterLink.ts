@@ -39,6 +39,10 @@ export const useRutterLink = (options: RutterLinkOptions) => {
       return;
     }
 
+    if (!(window as any).RutterLoader?.loadScript) {
+      return;
+    }
+
     // do the rutter loader side effect
     (window as any).RutterLoader.loadScript(() => {
       setRutterLoaderLoaded(true);
