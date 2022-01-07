@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import useScript from 'react-script-hook';
 
 import { createRutter, RutterFactory } from './factory';
-import { RutterLinkOptions, RutterLinkOptionsWithPublicKey } from './types';
+import { RutterLinkOptions } from './types';
 
 const RUTTER_LINK_STABLE_URL =
   'https://unpkg.com/@rutter/rutter-link-js@latest';
