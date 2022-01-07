@@ -26,10 +26,11 @@ export const useRutterLink = (options: RutterLinkOptions) => {
     checkForExisting: true,
   });
 
+  const publicKey = options?.publicKey;
+
   // internal state
   const [rutter, setRutter] = useState<RutterFactory | null>(null);
   const [iframeLoaded, setIframeLoaded] = useState(false);
-  const products = [[]];
 
   const [rutterLoaderLoaded, setRutterLoaderLoaded] = useState(false);
 
@@ -76,7 +77,7 @@ export const useRutterLink = (options: RutterLinkOptions) => {
 
     // destroy the Rutter iframe factory
     return () => next.exit({ force: true }, () => next.destroy());
-  }, [loading, error, rutterLoaderLoaded]);
+  }, [loading, error, rutterLoaderLoaded, publicKey]);
 
   return {
     error,
