@@ -79,9 +79,11 @@ export const useRutterLink = (options: RutterLinkOptions) => {
     return () => next.exit({ force: true }, () => next.destroy());
   }, [loading, error, rutterLoaderLoaded, publicKey]);
 
+  const ready = rutter != null && (!loading || iframeLoaded);
+
   return {
     error,
-    ready: !loading || iframeLoaded,
+    ready: ready,
     exit: rutter ? rutter.exit : noop,
     open: rutter ? rutter.open : noop,
   };

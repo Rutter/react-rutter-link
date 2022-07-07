@@ -46,11 +46,11 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react-script-hook": "1.1.0"
+    "react-script-hook": "^1.6.0"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
@@ -58,14 +58,6 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.12.10",
     "@babel/preset-react": "^7.7.0",
-    "@storybook/addon-actions": "^5.3.17",
-    "@storybook/addon-console": "^1.2.1",
-    "@storybook/addon-knobs": "^5.3.17",
-    "@storybook/addon-links": "^5.3.17",
-    "@storybook/addons": "^5.3.17",
-    "@storybook/preset-typescript": "^2.1.0",
-    "@storybook/react": "^5.3.17",
-    "@storybook/storybook-deployer": "^2.8.3",
     "@types/enzyme": "^3.10.4",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
@@ -88,9 +80,6 @@
     "mocha": "2.3.x",
     "parcel": "^2.0.0-beta.1",
     "prettier": "^1.19.1",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-tools": "0.13.x",
     "rollup": "^1.27.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
