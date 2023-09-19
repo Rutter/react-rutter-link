@@ -5,7 +5,7 @@ import { createRutter, RutterFactory } from './factory';
 import { RutterLinkOptions } from './types';
 
 const RUTTER_LINK_STABLE_URL =
-  'https://cdn.jsdelivr.net/npm/@rutter/rutter-link-js@latest';
+  'https://unpkg.com/@rutter/rutter-link@latest';
 
 const noop = () => {};
 
