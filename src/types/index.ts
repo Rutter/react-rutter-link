@@ -19,6 +19,7 @@ export type RutterLinkOptionsWithPublicKey = CommonRutterLinkOptions & {
   // the Rutter dashboard (https://dashboard.Rutter.com)
   publicKey: string;
   platform?: string;
+  avoidCDN?: boolean;
 };
 
 // Either the publicKey or the token field must be configured. The publicKey
