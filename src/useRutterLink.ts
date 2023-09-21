@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import useScript from 'react-script-hook';
-
 import { createRutter, RutterFactory } from './factory';
 import { RutterLinkOptions } from './types';
 
@@ -19,21 +18,39 @@ const noop = () => {};
  * A new Rutter instance is created every time the token and products options change.
  * It's up to you to prevent unnecessary re-creations on re-render.
  */
+
 export const useRutterLink = (options: RutterLinkOptions) => {
   // Asynchronously load the rutter/link/stable url into the DOM
   const [loading, error] = useScript({
-    src: RUTTER_LINK_STABLE_URL,
+    src: options.avoidCDN ? '' : RUTTER_LINK_STABLE_URL,
     checkForExisting: true,
   });
+  const { avoidCDN } = options;
 
   const publicKey = options?.publicKey;
 
   // internal state
   const [rutter, setRutter] = useState<RutterFactory | null>(null);
   const [iframeLoaded, setIframeLoaded] = useState(false);
-
   const [rutterLoaderLoaded, setRutterLoaderLoaded] = useState(false);
 
+  // Handles when Rutter is loaded through the local @rutter/rutter-link package
+  useEffect(() => {
+    if (options.avoidCDN) {
+      require('@rutter/rutter-link');
+      const next = createRutter({
+        ...options,
+        onLoad: () => {
+          setIframeLoaded(true);
+          options.onLoad && options.onLoad();
+        },
+      });
+
+      setRutter(next);
+    }
+  }, [avoidCDN]);
+
+  // Only handles when Rutter is loaded through CDN
   useEffect(() => {
     // If the link.js script is still loading, return prematurely
     if (loading) {
