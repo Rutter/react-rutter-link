@@ -1,6 +1,6 @@
 {
   "name": "react-rutter-link",
-  "version": "1.0.12-beta.1",
+  "version": "1.1.0",
   "description": "A React component for Rutter Link",
   "files": [
     "dist",
