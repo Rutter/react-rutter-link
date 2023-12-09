@@ -18,8 +18,11 @@ export type RutterLinkOptionsWithPublicKey = CommonRutterLinkOptions & {
   // The public_key associated with your account; available from
   // the Rutter dashboard (https://dashboard.Rutter.com)
   publicKey: string;
-  platform?: string;
   avoidCDN?: boolean;
+  // Additional options will be passed into the config in the rutter-link library https://www.npmjs.com/package/@rutter/rutter-link?activeTab=readme
+  dev?: {
+    openUrl?: string;
+  };
 };
 
 // Either the publicKey or the token field must be configured. The publicKey
