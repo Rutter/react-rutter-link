@@ -45,7 +45,7 @@
     }
   },
   "dependencies": {
-    "@rutter/rutter-link": "^1.1.1",
+    "@rutter/rutter-link": "^1.2.0",
     "prop-types": "^15.7.2",
     "react-script-hook": "^1.6.0"
   },
