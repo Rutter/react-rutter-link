@@ -1754,12 +1754,10 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@rutter/rutter-link@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@rutter/rutter-link/-/rutter-link-1.1.1.tgz#01e7a7a3472312deafdf4ccb4d5671075d47592e"
-  integrity sha512-preWO+xUsitaet0H9ijVjWYwg5UUvnhbKrbpyg2QIHQFWWbB2khNf8VEGGwr2Wv3nplnZYlv4XY4kIwDph4mTg==
-  dependencies:
-    axios "^0.21.0"
+"@rutter/rutter-link@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@rutter/rutter-link/-/rutter-link-1.2.4.tgz#e0999f72d74a980f27ae62008f9ac853f33e2484"
+  integrity sha512-O1baEjDe8x3Ws2hHAe0Q0gisRyjzmyEWBqoY5Ok/DFXcP80Bu+OOgA9B9VXKl9pYgzeFCJx2j3bXACXRqhTQng==
 
 "@swc/helpers@^0.4.2":
   version "0.4.3"
@@ -2159,13 +2157,6 @@ axe-core@^4.4.2:
   version "4.4.2"
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.4.2.tgz"
   integrity sha512-LVAaGp/wkkgYJcjmHsoKx4juT1aQvJyPcW09MLCjVTh3V2cc6PnyempiLMNH5iMdfIX/zdbjUx2KDjMLCTdPeA==
-
-axios@^0.21.0:
-  version "0.21.4"
-  resolved "https://registry.npmjs.org/axios/-/axios-0.21.4.tgz"
-  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
-  dependencies:
-    follow-redirects "^1.14.0"
 
 axobject-query@^2.2.0:
   version "2.2.0"
@@ -3229,11 +3220,6 @@ flatted@^2.0.0:
   version "2.0.2"
   resolved "https://registry.npmjs.org/flatted/-/flatted-2.0.2.tgz"
   integrity sha512-r5wGx7YeOwNWNlCA0wQ86zKyDLMQr+/RB8xy74M4hTphfmjlijTSSXGuH8rnvKZnfT9i+75zmd8jcKdMR4O6jA==
-
-follow-redirects@^1.14.0:
-  version "1.15.3"
-  resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.3.tgz"
-  integrity sha512-1VzOtuEM8pC9SFU1E+8KfTjZyMztRsgEfwQl44z8A25uy13jSzTj6dyK2Df52iV0vgHCfBwLhDWevLn95w5v6Q==
 
 for-each@^0.3.3:
   version "0.3.3"
