@@ -23,6 +23,8 @@ export type RutterLinkOptionsWithPublicKey = CommonRutterLinkOptions & {
   dev?: {
     openUrl?: string;
   };
+  platform?: string;
+  cardActivationId?: string;
 };
 
 // Either the publicKey or the token field must be configured. The publicKey
